@@ -12,6 +12,7 @@
     "casperjs": "^1.1.4",
     "cheerio": "^1.0.0-rc.2",
     "cheerio-tableparser": "^1.0.1",
+    "csvtojson": "^1.1.9",
     "express": "^4.16.2",
     "phantomjs": "^2.1.7",
     "shell-escape": "^0.2.0",
