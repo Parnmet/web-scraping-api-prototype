@@ -31,23 +31,26 @@ exports.casper = function(req, res) {
             var $ = cheerio.load(stdout)
             cheerioTableparser($)
             var data = $('table.table').parsetable(true, true, true)
+            console.log(data)
             data = prepareData(data)
             data = fillEmptyCell(data)
             data = convertRowToColumn(data)
             delete data[0]
-            const csv = require('csvtojson')
-            csv({
 
-            })
-                .fromString(data)
-                .on('csv', (csvRow) => { //this func will be called twice. Header row will not be populated
-                    // csvRow =>  [1,2,3] and [4,5,6]
-                    console.log(csvRow)
+            const csvToJson = () => {
+                return new Promise((resolve, reject) => {
+                    const csv = require('csvtojson')
+                    csv()
+                        .on('json', (jsonObj, rowIndex) => {
+                            console.log(jsonObj)
+                            resolve(jsonObj)
+                            //jsonObj=> {header1:cell1,header2:cell2}
+                            //rowIndex=> number
+                        })
                 })
-                .on('done', () => {
-                    console.log('end')
-                })
-            res.send(data)
+            }
+            csvToJson().then((json) => res.send(data))
+            // res.send(data)
         }
     });
 };
