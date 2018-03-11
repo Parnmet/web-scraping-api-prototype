@@ -1,5 +1,5 @@
 var casper = require('casper').create();
-var params = require('./model/myjsonfile.json')
+var params = require('../model/myjsonfile.json')
 
 var creds = JSON.parse(casper.cli.args)
 var host = params.url

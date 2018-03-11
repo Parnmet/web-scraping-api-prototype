@@ -3,13 +3,8 @@ const cheerioTableparser = require('cheerio-tableparser');
 const fs = require('fs');
 var filePath = 'html_result_table/test.html' 
 $ = cheerio.load(fs.readFileSync(filePath));
-// cheerioTableparser($);
-// //For html file.
-// var data = $('table.table').parsetable(true, true, true);
-// console.log(data)
 
 cheerioTableparser($);
-//For html file.
 var data = $('table.table').parsetable(true, true, true);
 
 function prepareData(data){

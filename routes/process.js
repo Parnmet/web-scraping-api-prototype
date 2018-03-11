@@ -14,7 +14,7 @@ var processController = require('../controllers/processController');
 router.get('/', processController.index);
 
 /* Search by qs */
-router.get('/search', processController.casper);
+router.get('/search', processController.search);
 
 
 module.exports = router;
