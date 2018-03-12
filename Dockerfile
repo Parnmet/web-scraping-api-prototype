@@ -10,7 +10,7 @@ ADD . /app
 RUN apt-get update && apt-get install libfontconfig xfonts-thai -y
 
 # Set path
-ENV PATH "/app/node_modules/phantomjs/bin:/app/node_modules/casperjs/bin"
+ENV PATH = "/app/node_modules/phantomjs/bin:/app/node_modules/casperjs/bin"
 
 # Set timezone 
 ENV TZ=Asia/Bangkok 
