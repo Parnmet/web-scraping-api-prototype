@@ -1,10 +1,11 @@
 var casper = require('casper').create();
-var params = require('../model/myjsonfile.json')
+var params = require('../model/informationForAPI.json')
 
 var creds = JSON.parse(casper.cli.args)
 var host = params.url
 casper.start(host, function () {
-    this.waitForSelector('input[name="start"]');
+    // this.waitForSelector('input[name="start"]');
+    this.waitForSelector( '[name="start"]');
 });
 
 // Fill data
@@ -35,7 +36,7 @@ casper.waitForSelector('h4.text-center', function(){
     response.text = text
     response.result = result
     console.log(JSON.stringify(response))
-    casper.capture('navigation2.png');
+    // casper.capture('navigation2.png');
 })
 
 casper.run();

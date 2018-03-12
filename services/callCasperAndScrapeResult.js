@@ -1,7 +1,6 @@
 
 exports.casperAutomation = (req, res, resolve) => {
     var exec = require('child_process').exec;
-    var fs = require('fs');
     var shellescape = require('shell-escape');
 
     var creds = JSON.stringify(req.query)
