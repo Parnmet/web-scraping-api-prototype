@@ -18,5 +18,5 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 EXPOSE 3000
 
-# CMD [ "node" ,"app.js" ]
+CMD [ "node" ,"app.js" ]
 
